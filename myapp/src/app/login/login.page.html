@@ -5,24 +5,28 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
-      <ion-img src="http://38.media.tumblr.com/8d0c6ab6f86248a04631f353a828fb5e/tumblr_n88mpcniKz1t4o62mo1_500.gif"></ion-img>
-    </ion-card> 
-    <ion-card>
+    <form ngSubmit=login(forma) #forma="ngForm">
+      <ion-card>
+        <ion-img src="http://38.media.tumblr.com/8d0c6ab6f86248a04631f353a828fb5e/tumblr_n88mpcniKz1t4o62mo1_500.gif"></ion-img>
+      </ion-card> 
+      
         <ion-title>Ingresar</ion-title>
-<ion-label color="blue">Usuario:</ion-label>
-<ion-input placeholder="Ingrese su usuario"></ion-input>
+        <ion-item>
+          <ion-label  color="blue">Usuario:</ion-label>
+          <ion-input ngModel #email="ngModel" name="email" type="email" minLength="5" maxLength="50" required placeholder="Ingrese su usuario"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label color="blue">Contraseña:</ion-label>
+          <ion-input ngModel #password="ngModel" name="password" type="password" minLength="5" maxLength="50" required placeholder="Ingrese su Contraseña"></ion-input>
+        </ion-item>
+      
+      <ion-card>
+        <ion-button type="submit" [disabled]="!forma.valid" href= "/home/tabs/tab1">Ingresar</ion-button>
+      <!-- <ion-router>href="animals">animals/ion-router-->
+      </ion-card>
 
-<ion-label color="blue">Contraseña:</ion-label>
-<ion-input placeholder="Ingrese su Contraseña"></ion-input>
-    </ion-card>
-    <ion-card>
-    <ion-button>Ingresar</ion-button>
-    <!-- <ion-router>href="animals">animals/ion-router-->
-    </ion-card>
-<ion-content>
-    <ion-card>
+      <ion-card>
         <ion-img src="https://media.giphy.com/media/SiNGhMu9W4180gvZk5/giphy.gif"></ion-img>
       </ion-card> 
-
+    </form>
 </ion-content>
